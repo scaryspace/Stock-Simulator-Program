@@ -26,6 +26,8 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBoxValueOfShares = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBoxFunds = New System.Windows.Forms.TextBox()
         Me.InfoDropdownStock = New System.Windows.Forms.ComboBox()
@@ -42,8 +44,8 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBoxBuySellQuantity = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBoxValueOfShares = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -78,6 +80,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.TextBoxValueOfShares)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -94,6 +97,23 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Information"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(140, 102)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "Value of Owned Shares"
+        '
+        'TextBoxValueOfShares
+        '
+        Me.TextBoxValueOfShares.Location = New System.Drawing.Point(143, 118)
+        Me.TextBoxValueOfShares.Name = "TextBoxValueOfShares"
+        Me.TextBoxValueOfShares.ReadOnly = True
+        Me.TextBoxValueOfShares.Size = New System.Drawing.Size(109, 20)
+        Me.TextBoxValueOfShares.TabIndex = 9
         '
         'Label6
         '
@@ -247,28 +267,31 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Quantity:"
         '
-        'TextBoxValueOfShares
+        'Label10
         '
-        Me.TextBoxValueOfShares.Location = New System.Drawing.Point(143, 118)
-        Me.TextBoxValueOfShares.Name = "TextBoxValueOfShares"
-        Me.TextBoxValueOfShares.ReadOnly = True
-        Me.TextBoxValueOfShares.Size = New System.Drawing.Size(109, 20)
-        Me.TextBoxValueOfShares.TabIndex = 9
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(0, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Label10"
         '
-        'Label9
+        'Label11
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(140, 102)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 13)
-        Me.Label9.TabIndex = 10
-        Me.Label9.Text = "Value of Owned Shares"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(10, 168)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(183, 117)
+        Me.Label11.TabIndex = 11
+        Me.Label11.Text = "Brokerage Fees:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$10.00 (Up to and including $1,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$19.95 (Over $1,000 up " &
+    "to $10,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$29.95 (Over $10,000 up to $25,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0.12% (Over $25,000)"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(941, 529)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -305,4 +328,6 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBoxValueOfShares As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
 End Class
