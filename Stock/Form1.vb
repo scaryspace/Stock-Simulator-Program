@@ -8,6 +8,7 @@
     Dim CostWithQuantity As Integer
 
     Private Sub ButtonBuySell_Click(sender As Object, e As EventArgs) Handles ButtonBuySell.Click
+        REM This will determine if the user is buying/selling and will Add/Remove the Shares/Money.
         If RadioButtonBuy.Checked = True And RadioButtonSell.Checked = False Then
             If BuySellDropDown.SelectedItem = Apple AndAlso AAPL_Cost * TextBoxBuySellQuantity.Text < TextBoxFunds.Text Then
                 Total_stocks_AAPL = Total_stocks_AAPL - TextBoxBuySellQuantity.Text
@@ -18,7 +19,14 @@
                 Stocks_Owned_GOOGL = Stocks_Owned_GOOGL + TextBoxBuySellQuantity.Text
                 TextBoxFunds.Text = TextBoxFunds.Text - GOOGL_Cost * TextBoxBuySellQuantity.Text
             End If
-        Else ButtonBuySell.Text = "Sell"
+        ElseIf BuySellDropDown.SelectedItem = Apple AndAlso Stocks_Owned_AAPL >= TextBoxBuySellQuantity.Text Then
+            Total_stocks_AAPL = Total_stocks_AAPL + TextBoxBuySellQuantity.Text
+            Stocks_Owned_AAPL = Stocks_Owned_AAPL - TextBoxBuySellQuantity.Text
+            TextBoxFunds.Text = TextBoxFunds.Text + AAPL_Cost * TextBoxBuySellQuantity.Text
+        ElseIf BuySellDropDown.SelectedItem = Google AndAlso Stocks_Owned_GOOGL >= TextBoxBuySellQuantity.Text Then
+            Total_stocks_GOOGL = Total_stocks_GOOGL + TextBoxBuySellQuantity.Text
+            Stocks_Owned_GOOGL = Stocks_Owned_GOOGL - TextBoxBuySellQuantity.Text
+            TextBoxFunds.Text = TextBoxFunds.Text + GOOGL_Cost * TextBoxBuySellQuantity.Text
         End If
         REM This if will set the info to the right amount
         If InfoDropdownStock.SelectedItem = Google Then
@@ -30,6 +38,7 @@
             TextBoxSharesOwned.Text = Stocks_Owned_AAPL
             TextBoxValueOfShares.Text = AAPL_Cost * Stocks_Owned_GOOGL
         End If
+        REM This is where I will add the brokerage fee, using an If statement.
     End Sub
 
     Private Sub BuySellDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuySellDropDown.SelectedIndexChanged
