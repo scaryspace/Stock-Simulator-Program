@@ -8,16 +8,37 @@
     Dim CostWithQuantity As Integer
 
     Private Sub ButtonBuySell_Click(sender As Object, e As EventArgs) Handles ButtonBuySell.Click
+
+        REM This is where I will add the brokerage fee, using an If statement.
+        If RadioButtonBuy.Checked = True And RadioButtonSell.Checked = False Then
+            If TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 1000 Then
+                BrokerageFee = 10
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 1000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 10000 Then
+                BrokerageFee = 19.95
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 10000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 25000 Then
+                BrokerageFee = 29.95
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 25000 Then
+                BrokerageFee = (TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text) * 0.12
+            End If
+        End If
+        REM $10.00 (Up to and including $1,000)
+
+        REM $19.95 (Over $1,000 up to $10,000)
+
+        REM $29.95 (Over $10,000 up to $25,000)
+
+        REM 0.12% (Over $25,000)
+
         REM This will determine if the user is buying/selling and will Add/Remove the Shares/Money.
         If RadioButtonBuy.Checked = True And RadioButtonSell.Checked = False Then
-            If BuySellDropDown.SelectedItem = Apple AndAlso AAPL_Cost * TextBoxBuySellQuantity.Text < TextBoxFunds.Text Then
+            If BuySellDropDown.SelectedItem = Apple AndAlso (AAPL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
                 Total_stocks_AAPL = Total_stocks_AAPL - TextBoxBuySellQuantity.Text
                 Stocks_Owned_AAPL = Stocks_Owned_AAPL + TextBoxBuySellQuantity.Text
-                TextBoxFunds.Text = TextBoxFunds.Text - AAPL_Cost * TextBoxBuySellQuantity.Text
-            ElseIf BuySellDropDown.SelectedItem = Google AndAlso GOOGL_Cost < TextBoxFunds.Text Then
+                TextBoxFunds.Text = TextBoxFunds.Text - (AAPL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
+            ElseIf BuySellDropDown.SelectedItem = Google AndAlso (GOOGL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
                 Total_stocks_GOOGL = Total_stocks_GOOGL - TextBoxBuySellQuantity.Text
                 Stocks_Owned_GOOGL = Stocks_Owned_GOOGL + TextBoxBuySellQuantity.Text
-                TextBoxFunds.Text = TextBoxFunds.Text - GOOGL_Cost * TextBoxBuySellQuantity.Text
+                TextBoxFunds.Text = TextBoxFunds.Text - (GOOGL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
             End If
         ElseIf BuySellDropDown.SelectedItem = Apple AndAlso Stocks_Owned_AAPL >= TextBoxBuySellQuantity.Text Then
             Total_stocks_AAPL = Total_stocks_AAPL + TextBoxBuySellQuantity.Text
@@ -39,26 +60,7 @@
             TextBoxValueOfShares.Text = AAPL_Cost * Stocks_Owned_GOOGL
         End If
 
-        REM This is where I will add the brokerage fee, using an If statement.
-        If RadioButtonBuy.Checked = True And RadioButtonSell.Checked = False Then
-            If TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 1000 Then
-                TextBoxFunds.Text = TextBoxFunds.Text - 10
-            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 1000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 10000 Then
-                TextBoxFunds.Text = TextBoxFunds.Text - 19.95
-            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 10000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 25000 Then
-                TextBoxFunds.Text = TextBoxFunds.Text - 29.95
-            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 25000 Then
-                BrokerageFee = (TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text) * 0.12
-                TextBoxFunds.Text = TextBoxFunds.Text - BrokerageFee
-            End If
-        End If
-        REM $10.00 (Up to and including $1,000)
 
-        REM $19.95 (Over $1,000 up to $10,000)
-
-        REM $29.95 (Over $10,000 up to $25,000)
-
-        REM 0.12% (Over $25,000)
     End Sub
 
     Private Sub BuySellDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuySellDropDown.SelectedIndexChanged
@@ -75,7 +77,7 @@
         Total_stocks_AAPL = 2000
         Stocks_Owned_AAPL = 0
         GOOGL_Cost = 1000
-        AAPL_Cost = Rnd() * 2 + 3
+        AAPL_Cost = 250
         TextBoxFunds.Text = 100000
         TextBoxValueOfShares.Text = 0
         Google = "Google (GOOGL)"
