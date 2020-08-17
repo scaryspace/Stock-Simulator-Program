@@ -22,9 +22,6 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,10 +45,10 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBoxBuySellQuantity = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.TextBoxMarketCap = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -84,6 +81,8 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBoxMarketCap)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.TextBoxValueOfShares)
@@ -105,7 +104,7 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(10, 168)
+        Me.Label11.Location = New System.Drawing.Point(10, 183)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(183, 117)
         Me.Label11.TabIndex = 11
@@ -115,7 +114,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(140, 102)
+        Me.Label9.Location = New System.Drawing.Point(140, 85)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(119, 13)
         Me.Label9.TabIndex = 10
@@ -123,7 +122,7 @@ Partial Class Form1
         '
         'TextBoxValueOfShares
         '
-        Me.TextBoxValueOfShares.Location = New System.Drawing.Point(143, 118)
+        Me.TextBoxValueOfShares.Location = New System.Drawing.Point(143, 99)
         Me.TextBoxValueOfShares.Name = "TextBoxValueOfShares"
         Me.TextBoxValueOfShares.ReadOnly = True
         Me.TextBoxValueOfShares.Size = New System.Drawing.Size(109, 20)
@@ -132,7 +131,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 102)
+        Me.Label6.Location = New System.Drawing.Point(10, 85)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(108, 13)
         Me.Label6.TabIndex = 8
@@ -140,7 +139,7 @@ Partial Class Form1
         '
         'TextBoxFunds
         '
-        Me.TextBoxFunds.Location = New System.Drawing.Point(9, 118)
+        Me.TextBoxFunds.Location = New System.Drawing.Point(9, 99)
         Me.TextBoxFunds.Name = "TextBoxFunds"
         Me.TextBoxFunds.ReadOnly = True
         Me.TextBoxFunds.Size = New System.Drawing.Size(109, 20)
@@ -248,7 +247,6 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Chart1)
         Me.GroupBox2.Controls.Add(Me.TextBoxBuySellQuantity)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ButtonBuySell)
@@ -282,21 +280,22 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Quantity:"
         '
-        'Chart1
+        'TextBoxMarketCap
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(148, 118)
-        Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(307, 257)
-        Me.Chart1.TabIndex = 13
-        Me.Chart1.Text = "Chart1"
+        Me.TextBoxMarketCap.Location = New System.Drawing.Point(9, 138)
+        Me.TextBoxMarketCap.Name = "TextBoxMarketCap"
+        Me.TextBoxMarketCap.ReadOnly = True
+        Me.TextBoxMarketCap.Size = New System.Drawing.Size(109, 20)
+        Me.TextBoxMarketCap.TabIndex = 12
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(27, 122)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 13)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Market Cap"
         '
         'Form1
         '
@@ -312,7 +311,6 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -341,5 +339,6 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBoxValueOfShares As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBoxMarketCap As TextBox
 End Class

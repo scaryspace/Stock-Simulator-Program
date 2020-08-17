@@ -75,7 +75,7 @@
         Total_stocks_AAPL = 2000
         Stocks_Owned_AAPL = 0
         GOOGL_Cost = 1000
-        AAPL_Cost = 250
+        AAPL_Cost = Rnd() * 2 + 3
         TextBoxFunds.Text = 100000
         TextBoxValueOfShares.Text = 0
         Google = "Google (GOOGL)"
@@ -86,10 +86,12 @@
         If InfoDropdownStock.SelectedItem = Google Then
             TextBoxSharesAvailable.Text = Total_stocks_GOOGL
             TextBoxSharesOwned.Text = Stocks_Owned_GOOGL
+            TextBoxMarketCap.Text = (Stocks_Owned_GOOGL + Total_stocks_GOOGL) * GOOGL_Cost
 
         ElseIf InfoDropdownStock.SelectedItem = Apple Then
             TextBoxSharesAvailable.Text = Total_stocks_AAPL
             TextBoxSharesOwned.Text = Stocks_Owned_AAPL
+            TextBoxMarketCap.Text = (Stocks_Owned_AAPL + Total_stocks_AAPL) * AAPL_Cost
         End If
     End Sub
 
