@@ -30,15 +30,20 @@
         REM 0.12% (Over $25,000)
 
         REM This will determine if the user is buying/selling and will Add/Remove the Shares/Money.
-        If RadioButtonBuy.Checked = True And RadioButtonSell.Checked = False Then
-            If BuySellDropDown.SelectedItem = Apple AndAlso (AAPL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
+        If RadioButtonBuy.Checked <> True Or RadioButtonSell.Checked <> False Then Return
+        If BuySellDropDown.SelectedItem = Apple Then
+            If (AAPL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
                 Total_stocks_AAPL = Total_stocks_AAPL - TextBoxBuySellQuantity.Text
                 Stocks_Owned_AAPL = Stocks_Owned_AAPL + TextBoxBuySellQuantity.Text
                 TextBoxFunds.Text = TextBoxFunds.Text - (AAPL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
-            ElseIf BuySellDropDown.SelectedItem = Google AndAlso (GOOGL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
+            Else MsgBox("Insufficient funds", "0", "Order Error")
+            End If
+        ElseIf BuySellDropDown.SelectedItem = Google Then
+            If (GOOGL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
                 Total_stocks_GOOGL = Total_stocks_GOOGL - TextBoxBuySellQuantity.Text
                 Stocks_Owned_GOOGL = Stocks_Owned_GOOGL + TextBoxBuySellQuantity.Text
                 TextBoxFunds.Text = TextBoxFunds.Text - (GOOGL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
+            Else MsgBox("Insufficient funds", "0", "Order Error")
             End If
         ElseIf BuySellDropDown.SelectedItem = Apple AndAlso Stocks_Owned_AAPL >= TextBoxBuySellQuantity.Text Then
             Total_stocks_AAPL = Total_stocks_AAPL + TextBoxBuySellQuantity.Text
@@ -49,7 +54,8 @@
             Stocks_Owned_GOOGL = Stocks_Owned_GOOGL - TextBoxBuySellQuantity.Text
             TextBoxFunds.Text = TextBoxFunds.Text + GOOGL_Cost * TextBoxBuySellQuantity.Text
         End If
-        REM This if will set the info to the right amount
+
+        REM This will set the info to the right amount
         If InfoDropdownStock.SelectedItem = Google Then
             TextBoxSharesAvailable.Text = Total_stocks_GOOGL
             TextBoxSharesOwned.Text = Stocks_Owned_GOOGL
@@ -59,8 +65,6 @@
             TextBoxSharesOwned.Text = Stocks_Owned_AAPL
             TextBoxValueOfShares.Text = AAPL_Cost * Stocks_Owned_GOOGL
         End If
-
-
     End Sub
 
     Private Sub BuySellDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuySellDropDown.SelectedIndexChanged
