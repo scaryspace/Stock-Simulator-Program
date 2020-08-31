@@ -3,8 +3,8 @@
     Dim Total_stocks_GOOGL, Stocks_Owned_GOOGL, Stocks_Owned_AAPL, Total_stocks_AAPL, BrokerageFee As Decimal
     Dim Google, Apple As String
     Dim BuyOrSell As String
-    Dim AAPL_Cost As Integer
-    Dim GOOGL_Cost As Integer
+    Dim AAPL_Cost As Decimal
+    Dim GOOGL_Cost As Decimal
     Dim CostWithQuantity As Integer
 
     Private Sub ButtonBuySell_Click(sender As Object, e As EventArgs) Handles ButtonBuySell.Click
@@ -68,6 +68,7 @@
     End Sub
 
     Private Sub BuySellDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuySellDropDown.SelectedIndexChanged
+        REM Refreshes the price textbox
         If BuySellDropDown.SelectedItem = Apple Then
             TextBoxBuySellPrice.Text = AAPL_Cost
         ElseIf BuySellDropDown.SelectedItem = Google Then
@@ -76,11 +77,12 @@
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         REM Prices and such on the specific shares
+        Randomize()
         Total_stocks_GOOGL = 1000
         Stocks_Owned_GOOGL = 0
         Total_stocks_AAPL = 2000
         Stocks_Owned_AAPL = 0
-        GOOGL_Cost = 1000
+        GOOGL_Cost = (Math.Ceiling(Rnd() * 1600)) + 700
         AAPL_Cost = 250
         TextBoxFunds.Text = 100000
         TextBoxValueOfShares.Text = 0
