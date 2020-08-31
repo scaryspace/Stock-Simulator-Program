@@ -83,7 +83,8 @@
         Total_stocks_AAPL = 2000
         Stocks_Owned_AAPL = 0
         GOOGL_Cost = (Math.Ceiling(Rnd() * 1600)) + 700
-        AAPL_Cost = 250
+        Randomize()
+        AAPL_Cost = (Math.Ceiling(Rnd() * 500)) + 250
         TextBoxFunds.Text = 100000
         TextBoxValueOfShares.Text = 0
         Google = "Google (GOOGL)"

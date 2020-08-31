@@ -17,6 +17,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/scaryspace/Stock-Simulator-Program" />
+      </set>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -41,7 +48,13 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="cd.." />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Stock" type="DotNetProject" factoryName=".NET Project">
@@ -80,7 +93,7 @@
       <workItem from="1598827580774" duration="137000" />
       <workItem from="1598827810366" duration="31000" />
       <workItem from="1598827920660" duration="403000" />
-      <workItem from="1598828348625" duration="4446000" />
+      <workItem from="1598828348625" duration="6700000" />
     </task>
     <servers />
   </component>
@@ -102,25 +115,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1598834227203">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1598836552237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598834227203" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1598834227203">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598836552237" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1598836552237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598834227203" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1598834227203">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598836552237" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1598836552237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598834227203" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1598834227203">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598836552237" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1598836552237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598834227203" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598836552237" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1598833325356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -197,10 +211,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="210" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598827279936" />
-    <state x="506" y="136" width="998" height="719" key="SettingsEditor" timestamp="1598828186870">
+    <state x="506" y="136" width="998" height="719" key="SettingsEditor" timestamp="1598834724511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="506" y="136" width="998" height="719" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598828186870" />
+    <state x="506" y="136" width="998" height="719" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598834724511" />
+    <state x="790" y="389" key="VCS.EditChangelistDialog" timestamp="1598836356083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="790" y="389" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598836356083" />
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598836412221">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598836412221" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1598836186226">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598836186226" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598833799478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
