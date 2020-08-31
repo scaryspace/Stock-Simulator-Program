@@ -6,6 +6,8 @@
     Dim AAPL_Cost As Decimal
     Dim GOOGL_Cost As Decimal
     Dim CostWithQuantity As Integer
+    
+    
 
     Private Sub ButtonBuySell_Click(sender As Object, e As EventArgs) Handles ButtonBuySell.Click
 
@@ -37,6 +39,7 @@
                 Stocks_Owned_AAPL = Stocks_Owned_AAPL + TextBoxBuySellQuantity.Text
                 TextBoxFunds.Text = TextBoxFunds.Text - (AAPL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
             Else MsgBox("Insufficient funds", "0", "Order Error")
+                
             End If
         ElseIf BuySellDropDown.SelectedItem = Google Then
             If (GOOGL_Cost * TextBoxBuySellQuantity.Text + BrokerageFee) <= TextBoxFunds.Text Then
@@ -54,7 +57,19 @@
             Stocks_Owned_GOOGL = Stocks_Owned_GOOGL - TextBoxBuySellQuantity.Text
             TextBoxFunds.Text = TextBoxFunds.Text + GOOGL_Cost * TextBoxBuySellQuantity.Text
         End If
+        
+        If BuySellDropDown.SelectedItem = Apple Then
+            TextBoxBuySellPrice.Text = AAPL_Cost
+        ElseIf BuySellDropDown.SelectedItem = Google Then
+            TextBoxBuySellPrice.Text = GOOGL_Cost
+        End If
+        
+        Randomize()
+        GOOGL_Cost = (Math.Ceiling(Rnd() * 1600)) + 700
+        Randomize()
+        AAPL_Cost = (Math.Ceiling(Rnd() * 500)) + 250
 
+        
         REM This will set the info to the right amount
         If InfoDropdownStock.SelectedItem = Google Then
             TextBoxSharesAvailable.Text = Total_stocks_GOOGL
@@ -65,6 +80,9 @@
             TextBoxSharesOwned.Text = Stocks_Owned_AAPL
             TextBoxValueOfShares.Text = AAPL_Cost * Stocks_Owned_GOOGL
         End If
+        
+
+        
     End Sub
 
     Private Sub BuySellDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BuySellDropDown.SelectedIndexChanged
@@ -74,21 +92,26 @@
         ElseIf BuySellDropDown.SelectedItem = Google Then
             TextBoxBuySellPrice.Text = GOOGL_Cost
         End If
+        
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         REM Prices and such on the specific shares
-        Randomize()
-        Total_stocks_GOOGL = 1000
-        Stocks_Owned_GOOGL = 0
-        Total_stocks_AAPL = 2000
-        Stocks_Owned_AAPL = 0
-        GOOGL_Cost = (Math.Ceiling(Rnd() * 1600)) + 700
-        Randomize()
-        AAPL_Cost = (Math.Ceiling(Rnd() * 500)) + 250
         TextBoxFunds.Text = 100000
         TextBoxValueOfShares.Text = 0
         Google = "Google (GOOGL)"
         Apple = "Apple (AAPL)"
+        Total_stocks_GOOGL = 1000
+        Stocks_Owned_GOOGL = 0
+        Total_stocks_AAPL = 2000
+        Stocks_Owned_AAPL = 0
+
+        
+        
+        Randomize()
+        GOOGL_Cost = (Math.Ceiling(Rnd() * 1600)) + 700
+        Randomize()
+        AAPL_Cost = (Math.Ceiling(Rnd() * 500)) + 250
+
     End Sub
 
     Private Sub InfoDropdownStock_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InfoDropdownStock.SelectedIndexChanged
