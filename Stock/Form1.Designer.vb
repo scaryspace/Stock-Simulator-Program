@@ -22,10 +22,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBoxMarketCap = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBoxValueOfShares = New System.Windows.Forms.TextBox()
@@ -43,10 +46,10 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ButtonBuySell = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ButtonBuySellQuantityAll = New System.Windows.Forms.Button()
         Me.TextBoxBuySellQuantity = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBoxMarketCap = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -100,6 +103,23 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Information"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(27, 122)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 13)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Market Cap"
+        '
+        'TextBoxMarketCap
+        '
+        Me.TextBoxMarketCap.Location = New System.Drawing.Point(9, 138)
+        Me.TextBoxMarketCap.Name = "TextBoxMarketCap"
+        Me.TextBoxMarketCap.ReadOnly = True
+        Me.TextBoxMarketCap.Size = New System.Drawing.Size(109, 20)
+        Me.TextBoxMarketCap.TabIndex = 12
         '
         'Label11
         '
@@ -247,6 +267,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ButtonBuySellQuantityAll)
         Me.GroupBox2.Controls.Add(Me.TextBoxBuySellQuantity)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ButtonBuySell)
@@ -262,6 +283,15 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buy/Sell"
+        '
+        'ButtonBuySellQuantityAll
+        '
+        Me.ButtonBuySellQuantityAll.Location = New System.Drawing.Point(376, 58)
+        Me.ButtonBuySellQuantityAll.Name = "ButtonBuySellQuantityAll"
+        Me.ButtonBuySellQuantityAll.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonBuySellQuantityAll.TabIndex = 13
+        Me.ButtonBuySellQuantityAll.Text = "All"
+        Me.ButtonBuySellQuantityAll.UseVisualStyleBackColor = True
         '
         'TextBoxBuySellQuantity
         '
@@ -280,22 +310,8 @@ Partial Class Form1
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Quantity:"
         '
-        'TextBoxMarketCap
+        'Timer1
         '
-        Me.TextBoxMarketCap.Location = New System.Drawing.Point(9, 138)
-        Me.TextBoxMarketCap.Name = "TextBoxMarketCap"
-        Me.TextBoxMarketCap.ReadOnly = True
-        Me.TextBoxMarketCap.Size = New System.Drawing.Size(109, 20)
-        Me.TextBoxMarketCap.TabIndex = 12
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(27, 122)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(62, 13)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Market Cap"
         '
         'Form1
         '
@@ -341,4 +357,6 @@ Partial Class Form1
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents TextBoxMarketCap As TextBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents ButtonBuySellQuantityAll As Button
 End Class
