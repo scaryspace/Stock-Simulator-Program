@@ -59,7 +59,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -116,6 +116,10 @@
       <workItem from="1598957642057" duration="308000" />
       <workItem from="1598995613298" duration="19000" />
       <workItem from="1598995692258" duration="659000" />
+      <workItem from="1598998558749" duration="587000" />
+      <workItem from="1599098895395" duration="5000" />
+      <workItem from="1599431907066" duration="2324000" />
+      <workItem from="1599723586024" duration="1194000" />
     </task>
     <servers />
   </component>
@@ -141,22 +145,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1598996358025">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1599726913988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598996358025" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1598996358025">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599726913988" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1599726913988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598996358025" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1598996358024">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599726913988" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1599726913987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598996358024" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1598996358025">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599726913987" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1599726913988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598996358025" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599726913988" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1598932974813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,10 +237,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="210" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598827279936" />
-    <state x="506" y="136" width="998" height="719" key="SettingsEditor" timestamp="1598947515061">
+    <state x="506" y="136" width="998" height="719" key="SettingsEditor" timestamp="1598998977180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="506" y="136" width="998" height="719" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598947515061" />
+    <state x="506" y="136" width="998" height="719" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598998977180" />
     <state x="790" y="389" key="VCS.EditChangelistDialog" timestamp="1598836356083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -249,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598857120790" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598917602381">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599433604050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598917602381" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599433604050" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

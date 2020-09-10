@@ -82,18 +82,21 @@
         ElseIf RadioButtonSell.Checked = True Then
                 
                 If BuySellDropDown.SelectedItem = Apple Then REM Checks if You are Selling Apple
-                    If Stocks_Owned_AAPL >= TextBoxBuySellQuantity.Text andalso (AAPL_Cost * TextBoxBuySellQuantity.Text + TextBoxFunds.Text) >= BrokerageFee Then REM Checks if you have enough moneys
+                    If Stocks_Owned_AAPL >= TextBoxBuySellQuantity.Text andalso (AAPL_Cost * TextBoxBuySellQuantity.Text + TextBoxFunds.Text) >= BrokerageFee Then REM Checks if you have enough $
                         Total_stocks_AAPL = Total_stocks_AAPL + TextBoxBuySellQuantity.Text
                         Stocks_Owned_AAPL = Stocks_Owned_AAPL - TextBoxBuySellQuantity.Text
                         TextBoxFunds.Text = TextBoxFunds.Text + (AAPL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
-                    Else MsgBox("Insufficient Shares or Funds Owned.", "0", "Order Error") REM Biggie error maker.
+                    Else 
+                        MsgBox("Insufficient Shares or Funds Owned.", "0", "Order Error") REM Biggie error maker.
                     End If
                 ElseIf BuySellDropDown.SelectedItem = Google andalso (GOOGL_Cost * TextBoxBuySellQuantity.Text + TextBoxFunds.Text) >= BrokerageFee Then REM Checks if you are buying Google
                     if Stocks_Owned_GOOGL >= TextBoxBuySellQuantity.Text Then
                         Total_stocks_GOOGL = Total_stocks_GOOGL + TextBoxBuySellQuantity.Text
                         Stocks_Owned_GOOGL = Stocks_Owned_GOOGL - TextBoxBuySellQuantity.Text
                         TextBoxFunds.Text = TextBoxFunds.Text + (GOOGL_Cost * TextBoxBuySellQuantity.Text) - BrokerageFee
-                    Else MsgBox("Insufficient Shares or Funds Owned.", "0", "Order Error")
+                    Else 
+                        MsgBox("Insufficient Shares or Funds Owned.", "0", "Order Error")
+                        
                     End If
                 End If    
         End If
@@ -108,6 +111,34 @@
     End Sub
 
     Private Sub ButtonBuySellQuantityAll_Click(sender As Object, e As EventArgs) Handles ButtonBuySellQuantityAll.Click
+        
+        if TextBoxBuySellPrice.Text > 0 Then 
+            
+            If TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 1000 Then
+                BrokerageFee = 10
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 1000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 10000 Then
+                BrokerageFee = 19.95
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 10000 AndAlso TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 25000 Then
+                BrokerageFee = 29.95
+            ElseIf TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text > 25000 Then
+                BrokerageFee = (TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text) * 0.12
+            End If
+        
+            if RadioButtonBuy.Checked = True then
+                if BuySellDropDown.SelectedItem = Apple Then
+                    TextBoxBuySellQuantity.Text = TextBoxFunds.Text / (AAPL_Cost + BrokerageFee)
+                ElseIf BuySellDropDown.SelectedItem = Google Then
+                    TextBoxBuySellQuantity.Text = TextBoxFunds.Text / (GOOGL_Cost + BrokerageFee)
+                End If    
+            Else    
+                if BuySellDropDown.SelectedItem = Apple Then
+                    TextBoxBuySellQuantity.Text = Stocks_Owned_AAPL
+                ElseIf BuySellDropDown.SelectedItem = Google Then
+                    TextBoxBuySellQuantity.Text = Stocks_Owned_GOOGL
+                End If
+            End If
+            
+        End If
         
         If TextBoxBuySellQuantity.Text * TextBoxBuySellPrice.Text <= 1000 Then
             BrokerageFee = 10

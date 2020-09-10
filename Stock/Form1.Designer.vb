@@ -86,7 +86,6 @@ Partial Class Form1
         '
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.TextBoxMarketCap)
-        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.TextBoxValueOfShares)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -124,7 +123,7 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(10, 183)
+        Me.Label11.Location = New System.Drawing.Point(6, 255)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(183, 117)
         Me.Label11.TabIndex = 11
@@ -269,6 +268,7 @@ Partial Class Form1
         '
         Me.GroupBox2.Controls.Add(Me.ButtonBuySellQuantityAll)
         Me.GroupBox2.Controls.Add(Me.TextBoxBuySellQuantity)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ButtonBuySell)
         Me.GroupBox2.Controls.Add(Me.Label7)
