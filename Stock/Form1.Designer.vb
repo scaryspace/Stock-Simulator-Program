@@ -29,7 +29,6 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBoxMarketCap = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBoxValueOfShares = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -38,6 +37,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBoxSharesOwned = New System.Windows.Forms.TextBox()
         Me.TextBoxSharesAvailable = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.RadioButtonBuy = New System.Windows.Forms.RadioButton()
         Me.RadioButtonSell = New System.Windows.Forms.RadioButton()
         Me.TextBoxBuySellPrice = New System.Windows.Forms.TextBox()
@@ -50,6 +50,11 @@ Partial Class Form1
         Me.TextBoxBuySellQuantity = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelHistoryBuyOrSell = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LabelHistorySharePrice = New System.Windows.Forms.Label()
+        Me.LabelHistoryQuantity = New System.Windows.Forms.Label()
+        Me.LabelHistoryBrokerageFee = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -84,6 +89,11 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LabelHistoryBrokerageFee)
+        Me.GroupBox1.Controls.Add(Me.LabelHistoryQuantity)
+        Me.GroupBox1.Controls.Add(Me.LabelHistorySharePrice)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.LabelHistoryBuyOrSell)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.TextBoxMarketCap)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -119,16 +129,6 @@ Partial Class Form1
         Me.TextBoxMarketCap.ReadOnly = True
         Me.TextBoxMarketCap.Size = New System.Drawing.Size(109, 20)
         Me.TextBoxMarketCap.TabIndex = 12
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 255)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(183, 117)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Brokerage Fees:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$10.00 (Up to and including $1,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$19.95 (Over $1,000 up " &
-    "to $10,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$29.95 (Over $10,000 up to $25,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0.12% (Over $25,000)"
         '
         'Label9
         '
@@ -197,6 +197,16 @@ Partial Class Form1
         Me.TextBoxSharesAvailable.ReadOnly = True
         Me.TextBoxSharesAvailable.Size = New System.Drawing.Size(109, 20)
         Me.TextBoxSharesAvailable.TabIndex = 3
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 255)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(183, 117)
+        Me.Label11.TabIndex = 11
+        Me.Label11.Text = "Brokerage Fees:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$10.00 (Up to and including $1,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$19.95 (Over $1,000 up " &
+    "to $10,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$29.95 (Over $10,000 up to $25,000)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0.12% (Over $25,000)"
         '
         'RadioButtonBuy
         '
@@ -313,6 +323,51 @@ Partial Class Form1
         'Timer1
         '
         '
+        'LabelHistoryBuyOrSell
+        '
+        Me.LabelHistoryBuyOrSell.AutoSize = True
+        Me.LabelHistoryBuyOrSell.Location = New System.Drawing.Point(6, 220)
+        Me.LabelHistoryBuyOrSell.Name = "LabelHistoryBuyOrSell"
+        Me.LabelHistoryBuyOrSell.Size = New System.Drawing.Size(53, 13)
+        Me.LabelHistoryBuyOrSell.TabIndex = 14
+        Me.LabelHistoryBuyOrSell.Text = "Buy/Sell: "
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 184)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(130, 13)
+        Me.Label12.TabIndex = 15
+        Me.Label12.Text = "Last Purchase Infomation:"
+        '
+        'LabelHistorySharePrice
+        '
+        Me.LabelHistorySharePrice.AutoSize = True
+        Me.LabelHistorySharePrice.Location = New System.Drawing.Point(6, 243)
+        Me.LabelHistorySharePrice.Name = "LabelHistorySharePrice"
+        Me.LabelHistorySharePrice.Size = New System.Drawing.Size(65, 13)
+        Me.LabelHistorySharePrice.TabIndex = 16
+        Me.LabelHistorySharePrice.Text = "Share Price:"
+        '
+        'LabelHistoryQuantity
+        '
+        Me.LabelHistoryQuantity.AutoSize = True
+        Me.LabelHistoryQuantity.Location = New System.Drawing.Point(6, 267)
+        Me.LabelHistoryQuantity.Name = "LabelHistoryQuantity"
+        Me.LabelHistoryQuantity.Size = New System.Drawing.Size(103, 13)
+        Me.LabelHistoryQuantity.TabIndex = 17
+        Me.LabelHistoryQuantity.Text = "Quantity Purchased:"
+        '
+        'LabelHistoryBrokerageFee
+        '
+        Me.LabelHistoryBrokerageFee.AutoSize = True
+        Me.LabelHistoryBrokerageFee.Location = New System.Drawing.Point(9, 294)
+        Me.LabelHistoryBrokerageFee.Name = "LabelHistoryBrokerageFee"
+        Me.LabelHistoryBrokerageFee.Size = New System.Drawing.Size(80, 13)
+        Me.LabelHistoryBrokerageFee.TabIndex = 18
+        Me.LabelHistoryBrokerageFee.Text = "Brokerage Fee:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,4 +414,9 @@ Partial Class Form1
     Friend WithEvents TextBoxMarketCap As TextBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents ButtonBuySellQuantityAll As Button
+    Friend WithEvents LabelHistoryBrokerageFee As Label
+    Friend WithEvents LabelHistoryQuantity As Label
+    Friend WithEvents LabelHistorySharePrice As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents LabelHistoryBuyOrSell As Label
 End Class

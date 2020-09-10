@@ -100,9 +100,22 @@
                     End If
                 End If    
         End If
-   
-                    
-                    
+
+
+        REM This is for the History information on the side
+
+        If RadioButtonBuy.Checked = True Then REM For the buy/sell label
+            LabelHistoryBuyOrSell.Text = "Buy/Sell: Buy"
+        Else
+            LabelHistoryBuyOrSell.Text = "Buy/Sell: Sell"
+        End If
+
+        LabelHistorySharePrice.Text = "Share Price: $" + TextBoxBuySellPrice.Text REM this is the price paid per share
+
+        LabelHistoryQuantity.Text = "Quantity: " + TextBoxBuySellQuantity.Text REM this is for the quantity
+
+        LabelHistoryBrokerageFee.Text = "Brokerage Fee: $" + BrokerageFee.ToString()
+
         RandomizePrice()
 
         
@@ -164,6 +177,8 @@
             End If
         End If
 
+
+        
         
     End Sub
 
@@ -195,7 +210,8 @@
         Stocks_Owned_AAPL = 0
         Timer1.Interval = 1000
         Timer1.Start()
-        
+        TextBoxBuySellPrice.Text = 0
+        TextBoxBuySellQuantity.Text = 1
         
         REM This will randomize the amounts.
         Randomize()
